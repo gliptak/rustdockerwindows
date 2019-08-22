@@ -1,0 +1,19 @@
+language: bash
+
+services: docker
+
+os: windows
+
+before_script:
+  - docker version
+  - env | sort
+
+script:
+  - |
+    (
+      set -Eeuo pipefail
+      set -x
+      # build:
+      docker build --tag rocker-win:1803-latest --file Dockerfile.windows.x86_64 .
+    )
+
