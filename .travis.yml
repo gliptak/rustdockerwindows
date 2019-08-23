@@ -15,5 +15,6 @@ script:
       set -x
       # build:
       docker build --tag rustvmm/dev:v3_amd64 --file Dockerfile.amd64 .
+      docker run --rm rustvmm/dev:v3_amd64 cargo --version
     )
 
