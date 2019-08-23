@@ -14,6 +14,6 @@ script:
       set -Eeuo pipefail
       set -x
       # build:
-      docker build --tag rocker-win:1803-latest --file Dockerfile.windows.x86_64 .
+      docker build --tag rustvmm/dev:v3_amd64 --file Dockerfile.amd64 .
     )
 
