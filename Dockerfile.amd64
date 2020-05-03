@@ -1,6 +1,6 @@
 # escape=`
 
-FROM microsoft/windowsservercore:1803
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 ADD https://aka.ms/vs/16/release/vs_buildtools.exe C:\TEMP\vs_buildtools.exe
 ADD https://win.rustup.rs/x86_64 C:\TEMP\rustup-init.exe
