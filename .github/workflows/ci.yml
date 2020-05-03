@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: docker
+      run: |
+        set -Eeuo pipefail
+        set -x
+        # build:
+        docker build --tag rustvmm/dev:v3_amd64 --file Dockerfile.amd64 .
+        docker run --rm rustvmm/dev:v3_amd64 cargo --version
+      shell: bash
